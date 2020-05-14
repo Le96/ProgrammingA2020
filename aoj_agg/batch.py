@@ -14,7 +14,7 @@ def main() -> None:
     score = {}
     for k, v in accepted.items():
         score[k] = calc_score(v)
-    for k, v in score:
+    for k, v in score.items():
         print(k, v)
 
 
@@ -24,10 +24,11 @@ def calc_score(accepted_problems: list) -> int:
     for score_dict in score_list:
         for k, v in score_dict.items():
             # only scoring problem for beginner.
-            if k != 1:
-                continue
-            if v in accepted_problems:
-                score += k
+            # if k != 1:
+            #     continue
+            for problem in v:
+                if problem in accepted_problems:
+                    score += k
     return score
 
 
