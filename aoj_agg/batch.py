@@ -4,8 +4,8 @@ import csv
 
 from tqdm import tqdm
 
-import aggregator
-import const
+import aggregator as aggregator
+import const as const
 
 
 def main() -> None:
@@ -46,7 +46,7 @@ def aggregate(data) -> list:
     result = {}
     for line in tqdm(data):
         user_name = line['フルネーム']
-        user_id = line['Q01_アカウント名']
+        user_id = line['Q00_アカウント名']
         user_id = user_id.split('=')[-1] if '=' in user_id else user_id
         accepted = aggregator.main(user_id)
         result[user_name] = accepted
