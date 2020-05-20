@@ -18,10 +18,12 @@ def main() -> None:
         print(k, v)
 
 
-def calc_score(accepted_problems: list) -> int:
+def calc_score(accepted_problems: list, lecture_number: int = None) -> int:
     score_list = const.SCORE_LIST
     score = 0
-    for score_dict in score_list:
+    for index, score_dict in enumerate(score_list):
+        if lecture_number and lecture_number != index + 1:
+            continue
         for k, v in score_dict.items():
             # only scoring problem for beginner.
             # if k != 1:
