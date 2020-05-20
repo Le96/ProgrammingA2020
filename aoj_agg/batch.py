@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
 
 import csv
+import sys
 
 from tqdm import tqdm
 
-import aggregator
-import const
+import aggregator as aggregator
+import const as const
 
 
-def main() -> None:
+def main(lecture_number: int = None) -> None:
     data = parse_csv()
     accepted = aggregate(data)
     score = {}
     for k, v in accepted.items():
-        score[k] = calc_score(v)
+        if lecture_number:
+            score[k] = calc_score(v, lecture_number)
+        else:
+            score[k] = calc_score(v)
     for k, v in score.items():
         print(k, v)
 
 
-def calc_score(accepted_problems: list) -> int:
+def calc_score(accepted_problems: list, lecture_number: int = None) -> int:
     score_list = const.SCORE_LIST
     score = 0
-    for score_dict in score_list:
+    for index, score_dict in enumerate(score_list):
+        if lecture_number and lecture_number != index + 1:
+            continue
         for k, v in score_dict.items():
             # only scoring problem for beginner.
             # if k != 1:
@@ -46,7 +52,7 @@ def aggregate(data) -> list:
     result = {}
     for line in tqdm(data):
         user_name = line['フルネーム']
-        user_id = line['Q01_アカウント名']
+        user_id = line['Q00_アカウント名']
         user_id = user_id.split('=')[-1] if '=' in user_id else user_id
         accepted = aggregator.main(user_id)
         result[user_name] = accepted
@@ -54,4 +60,7 @@ def aggregate(data) -> list:
 
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) == 2 and sys.argv[1].isdecimal():
+        main(int(sys.argv[1]))
+    else:
+        main()
