@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import csv
+import sys
 
 from tqdm import tqdm
 
@@ -8,12 +9,15 @@ import aggregator as aggregator
 import const as const
 
 
-def main() -> None:
+def main(lecture_number: int = None) -> None:
     data = parse_csv()
     accepted = aggregate(data)
     score = {}
     for k, v in accepted.items():
-        score[k] = calc_score(v)
+        if lecture_number:
+            score[k] = calc_score(v, lecture_number)
+        else:
+            score[k] = calc_score(v)
     for k, v in score.items():
         print(k, v)
 
@@ -56,4 +60,7 @@ def aggregate(data) -> list:
 
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) == 2 and sys.argv[1].isdecimal():
+        main(int(sys.argv[1]))
+    else:
+        main()
