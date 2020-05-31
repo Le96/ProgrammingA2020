@@ -1,4 +1,4 @@
-package lec02;
+package lec02.med;
 
 import java.util.Scanner;
 
@@ -25,5 +25,6 @@ public class Grading {
             else
                 System.out.println("F");
         }
+        sc.close();
     }
 }

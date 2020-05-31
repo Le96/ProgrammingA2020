@@ -21,5 +21,6 @@ public class Dictionary {
             else
                 System.out.println(dict.contains(word) ? "yes" : "no");
         }
+        sc.close();
     }
 }

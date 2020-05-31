@@ -1,4 +1,4 @@
-package lec01;
+package lec01.pro;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package lec02;
+package lec02.med;
 
 import java.util.Scanner;
 
@@ -15,5 +15,6 @@ public class SumOfNumbers {
             }
             System.out.println(sum);
         }
+        sc.close();
     }
 }

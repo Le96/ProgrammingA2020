@@ -1,7 +1,5 @@
-package lec02;
+package lec02.pro;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class BubbleSort {
@@ -11,6 +9,7 @@ public class BubbleSort {
         int[] list = new int[n];
         for (int i = 0; i < n; i++)
             list[i] = sc.nextInt();
+        sc.close();
         // bubblesort
         int count = 0;
         boolean rejected = true;

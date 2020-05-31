@@ -1,4 +1,4 @@
-package lec01;
+package lec01.xtr;
 
 import java.util.ArrayList;
 import java.util.BitSet;

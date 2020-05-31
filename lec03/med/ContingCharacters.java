@@ -1,7 +1,5 @@
 package lec03.med;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**

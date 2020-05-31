@@ -1,7 +1,6 @@
-package lec02;
+package lec02.xtr;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
@@ -39,6 +38,7 @@ public class SumOfIntegers {
             }
             result.add(count);
         }
+        sc.close();
         for (int i = 0; i < result.size(); i++) {
             System.out.println(result.get(i));
         }

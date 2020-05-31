@@ -1,4 +1,4 @@
-package lec02;
+package lec02.beg;
 
 import java.util.Scanner;
 
@@ -18,5 +18,6 @@ public class PrintARectangle {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
