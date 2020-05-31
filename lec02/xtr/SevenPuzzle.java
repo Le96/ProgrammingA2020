@@ -1,4 +1,4 @@
-package lec02;
+package lec02.xtr;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class SevenPuzzle {
     public static void main(String[] args) {
@@ -43,6 +42,7 @@ public class SevenPuzzle {
                 target.add(sc.nextInt());
             System.out.println(map.get(target.toString()));
         }
+        sc.close();
     }
 
     private static List<Integer> up(List<Integer> status, int zero_index) {

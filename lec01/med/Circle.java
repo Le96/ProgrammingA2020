@@ -1,4 +1,4 @@
-package lec01;
+package lec01.med;
 
 import java.math.BigDecimal;
 import java.util.Scanner;

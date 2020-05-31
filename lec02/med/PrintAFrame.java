@@ -1,4 +1,4 @@
-package lec02;
+package lec02.med;
 
 import java.util.Scanner;
 
@@ -24,5 +24,6 @@ public class PrintAFrame {
             System.out.println();
             System.out.println();
         }
+        sc.close();
     }
 }
