@@ -1,4 +1,4 @@
-package lec02;
+package lec02.pro;
 
 import java.util.Scanner;
 
@@ -9,6 +9,7 @@ public class SelectionSort {
         int[] list = new int[n];
         for (int i = 0; i < n; i++)
             list[i] = sc.nextInt();
+        sc.close();
         int count = 0;
         for (int i = 0; i < n; i++) {
             int min_j = i;

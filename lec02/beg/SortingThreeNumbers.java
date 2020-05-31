@@ -1,4 +1,4 @@
-package lec02;
+package lec02.beg;
 
 import java.util.ArrayList;
 import java.util.Collections;

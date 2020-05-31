@@ -1,4 +1,4 @@
-package lec02;
+package lec02.pro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ public class FindingAWord {
                 break;
             T.add(word.toUpperCase());
         }
+        sc.close();
         int count = 0;
         for (String t : T) {
             if (w.equals(t))

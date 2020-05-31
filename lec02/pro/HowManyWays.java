@@ -1,4 +1,4 @@
-package lec02;
+package lec02.pro;
 
 import java.util.Scanner;
 
@@ -19,5 +19,6 @@ public class HowManyWays {
                 }
             System.out.println(cand);
         }
+        sc.close();
     }
 }

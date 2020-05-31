@@ -15,6 +15,7 @@ public class OfficialHouse {
             int v = sc.nextInt();
             house[b][f][r] += v;
         }
+        sc.close();
         for (int b = 0; b < 4; b++) {
             for (int f = 0; f < 3; f++) {
                 for (int r = 0; r < 10; r++)
